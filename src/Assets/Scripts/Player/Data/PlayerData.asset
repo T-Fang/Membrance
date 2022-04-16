@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed75ab845971bb8a18833bdee5b38032, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  walkingVel: 5
+  accel: 1.2
+  deccel: 0.5
+  originalJumpVel: 16
+  jumpVel: 16
+  maxJumps: 2
+  jumpForce: 10
+  coyoteTolerance: 0.269
+  vertsDamper: 0.4
+  beepBeepTolerance: 0.18
+  groundLabel:
+    serializedVersion: 2
+    m_Bits: 64
+  wallBeepTolerance: 0.27
+  wallClimbVel: 3
+  wallJumpvel: 22
+  wallJumpTime: 0.2
+  wallJumpAngle: {x: 1, y: 2}
+  dashCD: 0.1
+  dashTime: 0.169
+  originalDashVel: 20.69
+  dashVel: 20.69
+  dragForce: 10
+  dashEndDamper: 0.5
+  afterImageDist: 0.369
+  MaxSanity: 100
+  iFrame: 1
+  numOfFlickers: 3
+  flickerDelay: 0.1
+  flickerAlpha: 0.5

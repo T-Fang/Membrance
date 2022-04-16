@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: TorchLight
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-94.41077,"y":70.05227},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-528.0,"y":-70.0},"guid":"2c35229d-85e8-4540-9a99-04d281d86844","$version":"A","$type":"Bolt.Update","$id":"9"},{"defaultValues":{"duration":{"$content":1.0,"$type":"System.Single"},"unscaledTime":{"$content":false,"$type":"System.Boolean"}},"position":{"x":-247.0,"y":-135.0},"guid":"c56a1797-3cc3-44a3-9b24-7d91fcc95158","$version":"A","$type":"Bolt.Timer","$id":"11"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"start","guid":"bed9616d-2114-47b0-9dd0-cab6bddabd3d","$type":"Bolt.ControlConnection"}],"$version":"A"}}'
+    _objectReferences: []

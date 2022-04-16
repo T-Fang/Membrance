@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a5c57368de20e3fb8a5483c8e8c330, type: 3}
+  m_Name: SloMo2
+  m_EditorClassIdentifier: 
+  name: SlowMo2
+  cooldownTimeLen: 2
+  activeTimeLen: 2
+  AbilityLimit: 100
+  Cost: 0
+  slowdownFactor: 0.1
