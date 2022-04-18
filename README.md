@@ -3,7 +3,7 @@ A 2D Action Platformer Game
 
 **Team members:**
 
-ALEX TEO KANG JIEl, EDELINE TENGES, JASON TAY, TIAN FANG, ZHU BO
+ALEX TEO KANG JIEl, CUNG CHAN THANG, EDELINE TENGES, JASON TAY, TIAN FANG, ZHU BO
 
 ![5](https://user-images.githubusercontent.com/61874388/163675840-937660c6-cfb4-4e58-a6e7-ab2996695577.png)
 
