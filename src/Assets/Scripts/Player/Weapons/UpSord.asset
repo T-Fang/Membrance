@@ -17,4 +17,4 @@ MonoBehaviour:
   - attackName: UpUp
     movementSPD: 0
     movementSPDY: 20
-    damage: 3000
+    damage: 9.999999

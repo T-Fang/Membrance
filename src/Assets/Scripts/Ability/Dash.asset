@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dash
   m_EditorClassIdentifier: 
   name: Dashy
-  cooldownTimeLen: 0.275
+  cooldownTimeLen: 2.5
   activeTimeLen: 0.25
   AbilityLimit: 100
   Cost: 0

@@ -21,43 +21,43 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 8f0ba748d417c0c4bb2ee748bc57fa68, type: 3}
-    - time: 0.083333336
+    - time: 0.23333333
       value: {fileID: 21300000, guid: 5b9bf6970e6f78b4c880e43eb93a1f7c, type: 3}
-    - time: 0.16666667
+    - time: 0.51666665
       value: {fileID: 21300000, guid: f0a43ab44af6339488a48e23488fe7c3, type: 3}
-    - time: 0.25
+    - time: 0.78333336
       value: {fileID: 21300000, guid: 4ccf1ff2c52127e4cacd9fc58c7adaa0, type: 3}
-    - time: 0.33333334
+    - time: 1.0166667
       value: {fileID: 21300000, guid: e2fe3afad229acf4890db860ccf89cee, type: 3}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: 87950867664056347bb4ccedbaab299c, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 6629bb85990ffc04eb400fe84ef356c8, type: 3}
-    - time: 0.5833333
-      value: {fileID: 21300000, guid: 23b8be762c2ebd5498427bb4d49e349a, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: 76f81b59a892d2442a524e461de022c1, type: 3}
-    - time: 0.75
-      value: {fileID: 21300000, guid: 20d69d7ceac15c140b4e597d00820b87, type: 3}
-    - time: 0.8333333
-      value: {fileID: 21300000, guid: 362811acee49651439418d39d2633a91, type: 3}
-    - time: 0.9166667
-      value: {fileID: 21300000, guid: dd650f3cdfdd3db47a4f0f9f697a0dda, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: 86e7e54e290a6ea479414e87f6bf3ade, type: 3}
-    - time: 1.0833334
-      value: {fileID: 21300000, guid: 32e9953ae737c8f49a3c4f47cb5b245f, type: 3}
-    - time: 1.1666666
-      value: {fileID: 21300000, guid: c3a97efddd44aed45bce091cad8235fc, type: 3}
-    - time: 1.25
-      value: {fileID: 21300000, guid: a9d5bcadfcc51cc4ba63453e24cf8fd7, type: 3}
     - time: 1.3333334
-      value: {fileID: 21300000, guid: 8a6452f3f7beb5d438a7879c10198ad3, type: 3}
-    - time: 1.4166666
-      value: {fileID: 21300000, guid: 6ad0fba145f744244a1a08864d57880f, type: 3}
-    - time: 1.5
-      value: {fileID: 21300000, guid: 8fea0589434194445929d32d095c9396, type: 3}
+      value: {fileID: 21300000, guid: 87950867664056347bb4ccedbaab299c, type: 3}
     - time: 1.5833334
+      value: {fileID: 21300000, guid: 6629bb85990ffc04eb400fe84ef356c8, type: 3}
+    - time: 1.8666667
+      value: {fileID: 21300000, guid: 23b8be762c2ebd5498427bb4d49e349a, type: 3}
+    - time: 2.1
+      value: {fileID: 21300000, guid: 76f81b59a892d2442a524e461de022c1, type: 3}
+    - time: 2.3666666
+      value: {fileID: 21300000, guid: 20d69d7ceac15c140b4e597d00820b87, type: 3}
+    - time: 2.6166666
+      value: {fileID: 21300000, guid: 362811acee49651439418d39d2633a91, type: 3}
+    - time: 2.8833334
+      value: {fileID: 21300000, guid: dd650f3cdfdd3db47a4f0f9f697a0dda, type: 3}
+    - time: 3.1166666
+      value: {fileID: 21300000, guid: 86e7e54e290a6ea479414e87f6bf3ade, type: 3}
+    - time: 3.4
+      value: {fileID: 21300000, guid: 32e9953ae737c8f49a3c4f47cb5b245f, type: 3}
+    - time: 3.65
+      value: {fileID: 21300000, guid: c3a97efddd44aed45bce091cad8235fc, type: 3}
+    - time: 3.9666667
+      value: {fileID: 21300000, guid: a9d5bcadfcc51cc4ba63453e24cf8fd7, type: 3}
+    - time: 4.2
+      value: {fileID: 21300000, guid: 8a6452f3f7beb5d438a7879c10198ad3, type: 3}
+    - time: 4.4666667
+      value: {fileID: 21300000, guid: 6ad0fba145f744244a1a08864d57880f, type: 3}
+    - time: 4.75
+      value: {fileID: 21300000, guid: 8fea0589434194445929d32d095c9396, type: 3}
+    - time: 4.983333
       value: {fileID: 21300000, guid: aea0b66b133140240a4b3d891e57d8ed, type: 3}
     attribute: m_Sprite
     path: 
@@ -103,7 +103,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.6
+    m_StopTime: 5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -123,7 +123,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5833334
+  - time: 4.983333
     functionName: BossDie
     data: 
     objectReferenceParameter: {fileID: 0}

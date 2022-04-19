@@ -58,6 +58,8 @@ public class PlayerAfterImage : MonoBehaviour
     private void Update()
     {
         _alpha *= _alphaFactor;
+        //Color PlayerColor = _playerRef.GetComponent<DashColor>().dashColor;
+        //_color = new Color(PlayerColor.r, PlayerColor.g, PlayerColor.b, _alpha);
         _color = new Color(0.0f, 1.0f, 0.0f, _alpha);
         //_afterImageSR.material.SetColor("_Color", _color);
         _afterImageSR.color = _color;

@@ -18,7 +18,7 @@ public class TutorialCheckpoint : MonoBehaviour
         "It's an enemy patrol! You need to defeat him. Press C or left click to do a melee attack.",
         "It seems this area is blocked off by a barrier. You will need to find the corresponding orb to unlock the barrier!",
         "There are more enemies ahead! These enemies are much stronger, try out your most powerful attack by pressing R or right click. This attack will consume your sanity indicated by the yellow bar on the top left!",
-        "The blue orb will grant power like you've never felt before! To use it, stand near the blue orb and press F to absorb the orb.",
+        "The blue orb will grant power like you've never felt before! To use it, stand near the blue orb and press F to absorb the orb. (Left+Right+F) to change back",
     };
 
     [SerializeField] private GameObject dialogue;

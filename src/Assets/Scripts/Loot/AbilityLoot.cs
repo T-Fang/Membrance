@@ -7,15 +7,10 @@ using Random = UnityEngine.Random;
 
 public class AbilityLoot : MonoBehaviour, SuckableAbility
 {
-    public Ability BigSord;
-
-    public Sprite BigSordSprite;
-
     public float LifeSpan = 10f;
     public float StartTime;
 
-    public Ability ability;
-    public Sprite AbilitySprite;
+    //public Ability ability;
     public GameObject AbilityGameObject;
 
     #region Chasing Player
@@ -84,7 +79,8 @@ public class AbilityLoot : MonoBehaviour, SuckableAbility
             _playerRef = col.gameObject.GetComponent<Player>();
             Instantiate(TransitionSmokeParticle, col.gameObject.transform.position + SmokeOffset, Quaternion.Euler(0.0f, 0.0f, 0.0f));
             // /StartCoroutine(WaitAbsorption(col.gameObject.GetComponent<Player>()));
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            gameObject.SetActive(false); // just hack la just hack
         }
     }
 

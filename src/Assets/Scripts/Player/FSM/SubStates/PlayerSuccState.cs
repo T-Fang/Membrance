@@ -29,7 +29,6 @@ public class PlayerSuccState : PlayerAbilityState
                 ability.StartSucking();
                 // BigSordSprite needs to be a game object because can't find good sprites
                 // TODO: Find good sprite which is roughly the same size as character's sprite
-                Player.CurrentSprite = ability.AbilitySprite;
                 Player.AbsorbedPlayer = ability.AbilityGameObject;
             }
         }

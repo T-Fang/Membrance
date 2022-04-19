@@ -12,6 +12,7 @@ public class PlayerGroundedState : PlayerState
     private bool _grabInputted;
     private bool _dashInputted;
     private bool _succInputted;
+    private bool _changeBackInputted;
     public PlayerGroundedState(Player player, PlayerFSM sm, PlayerData data, string animBoolName) : base(player, sm, data, animBoolName)
     {
     }
@@ -46,6 +47,7 @@ public class PlayerGroundedState : PlayerState
         _grabInputted = Player.Ih.GrabInputted;
         _dashInputted = Player.Ih.DashInputted;
         _succInputted = Player.Ih.SuccBtnInputted;
+        _changeBackInputted = Player.Ih.ChangeBackInputted;
 
         if (Player.Ih.AttackInputted[(int)AttackInputs.slash])
         {
@@ -58,6 +60,9 @@ public class PlayerGroundedState : PlayerState
         }else if (_succInputted)
         {
             StateMachine.ChangeState(Player.SuccAbilityState);
+        }else if (_changeBackInputted)
+        {
+            StateMachine.ChangeState(Player.BackToDefaultState);
         }
         else if (_jumpInputted && Player.JumpState.StillCanJump())
         {

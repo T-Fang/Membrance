@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public PlayerDeathState DeathState { get; private set; }
     public PlayerSuccState SuccAbilityState { get; private set; }
     public PlayerAbsorbState AbsorbState { get; private set; }
+    public PlayerChangeBackState BackToDefaultState { get; private set; }
 
     // Player (ref) input, states (ref) player --> states (can access) input
     [SerializeField] public PlayerData data;
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
    public int absorbedId { get; private set; }
 
    #endregion
+   
 
     #region  Physics helpers
 
@@ -80,12 +82,33 @@ public class Player : MonoBehaviour
    public Sprite CurrentSprite;
    public static bool IsAbsorbing; // TODO: Potential game crashing on level reload
    public GameObject AbsorbedPlayer;
-   public string MagicId;
-   public float MagicCd;
+   public AbilityLoot DefaultPlayer;
+   private string MagicId;
+   private float MagicCd;
+   public MagicStatsData magicdata;
    public AbilityHolder2 DashHolder;
    public GameObject Magic;
 
 
+   #region recover from absorb
+
+   private Sprite _defaultSprite;
+   private RuntimeAnimatorController _defaultSlashBase;
+   private RuntimeAnimatorController _defaultSlashWeapon;
+   private Vector3 _defaultSlashScale;
+   private RuntimeAnimatorController _defaultUpSlashBase;
+   private RuntimeAnimatorController _defaultUpSlashWeapon;
+   private Vector3 _defaultUpSlashScale;
+   private int _defaultUniqueId;
+   private string _defaultMagicId;
+   private float _defaultMagicCd;
+   private GameObject _defaultMagic;
+   private MagicStatsData _defaultMagicData;
+   private bool _isInDefault;
+   public GameObject ChangeBackParticle;
+   public static bool FinishChangeBack;
+   #endregion
+   
    #region Unity Events
     private void Awake()
     {
@@ -119,6 +142,7 @@ public class Player : MonoBehaviour
         DeathState = new PlayerDeathState(this, StateMachine, data, "dead");
         SuccAbilityState = new PlayerSuccState(this, StateMachine, data, "dead");
         AbsorbState = new PlayerAbsorbState(this, StateMachine, data, "transform");
+        BackToDefaultState = new PlayerChangeBackState(this, StateMachine, data, "transform");
     }
 
     private void Start()
@@ -136,6 +160,18 @@ public class Player : MonoBehaviour
         AudioManager = FindObjectOfType<AudioManager>();
         absorbedId = 0; // default self
         InitAbilityHolders();
+
+        _defaultSprite = GetComponent<SpriteRenderer>().sprite;
+       _defaultSlashBase = transform.Find("Weapons/Sword/Base").GetComponent<Animator>().runtimeAnimatorController ;
+       _defaultSlashWeapon = transform.Find("Weapons/Sword/Weapon").GetComponent<Animator>().runtimeAnimatorController ;
+       _defaultSlashScale = transform.Find("Weapons/UpSword/Weapon").transform.localScale;
+       _defaultUpSlashBase = transform.Find("Weapons/UpSword/Base").GetComponent<Animator>().runtimeAnimatorController ;
+       _defaultUpSlashWeapon = transform.Find("Weapons/UpSword/Base").GetComponent<Animator>().runtimeAnimatorController ;
+       _defaultUpSlashScale = transform.Find("Weapons/UpSword/Weapon").transform.localScale;
+       _defaultUniqueId = _characterId; // should i just hardcode this
+       _defaultMagicId = data.MagicId;
+       _defaultMagicCd = data.MagicCd;
+       _defaultMagicData = magicdata;
 
         FacingDir = 1;
         VelocitySettable = true;
@@ -267,6 +303,8 @@ public class Player : MonoBehaviour
         Magic = magic; // TODO: type check this
     }
 
+    public static void SetFinishChangeBack() => FinishChangeBack = true;
+
     public void ShootFireball()
     {
         if (CurrentSanity <= 0) return;
@@ -330,9 +368,9 @@ public class Player : MonoBehaviour
         _helperVec /= timeScale;
         data.walkingVel /= timeScale;
         data.jumpVel /= timeScale;
-        DefaultFireballMovement.SetSpeed(timeScale,true);
         BodyRef.velocity /= timeScale;
         BodyRef.gravityScale /= _physicsScale;
+        magicdata.ProjectileSpeed /= timeScale;
     }
     public void EndSloMo(float timeScale)
     {
@@ -342,9 +380,9 @@ public class Player : MonoBehaviour
         _helperVec *= timeScale;
         data.walkingVel *= timeScale;
         data.jumpVel *= timeScale;
-        DefaultFireballMovement.SetSpeed(timeScale,false);
         BodyRef.velocity *= timeScale;
         BodyRef.gravityScale *= _physicsScale;
+        magicdata.ProjectileSpeed *= timeScale;
     }
 
     public void BeginBigSordForm()
@@ -387,6 +425,13 @@ public class Player : MonoBehaviour
     {
         return _characterId;
     }
+
+    public bool IsInDefault()
+    {
+        return _isInDefault;
+    }
+
+    public void SetIfIsInDefault(bool val) => _isInDefault = val;
 
 
     #endregion

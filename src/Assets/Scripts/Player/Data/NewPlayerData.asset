@@ -30,7 +30,7 @@ MonoBehaviour:
   wallJumpvel: 14
   wallJumpTime: 0.2
   wallJumpAngle: {x: 1, y: 2}
-  dashCD: 0.275
+  dashCD: 2.5
   dashTime: 0.25
   originalDashVel: 20.69
   dashVel: 20.69

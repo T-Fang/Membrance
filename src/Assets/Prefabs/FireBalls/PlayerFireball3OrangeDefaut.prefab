@@ -14809,7 +14809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a04b28688b6e6f4c98ed61b888d8884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileSpeed: 15
+  magicdata: {fileID: 11400000, guid: 2dfdde8e4640ccc45b2c5d376a217977, type: 2}
   impactEffect: {fileID: 1090680790622714, guid: a08122f2bd0713347864c5ac4b55578b, type: 3}
   muzzleEffect: {fileID: 1941446428513338, guid: 1053321fdd65b69438cce0cf6c2f7ac3, type: 3}
   trails:

@@ -42,12 +42,12 @@ public class BossWalk : StateMachineBehaviour
         {
             cooldownTimer = 0;
             // Generate random random number to determine which melee attack to use
-            randomNumber = Random.Range(1, 12);
+            randomNumber = Random.Range(1, 5);
 
-            // Use meleeAttack1 1/3 of the times, meleeAttack2 1/3 of the times, rangedAttack1 1/6 of the times, rangedAttack2 1/6 of the times
-            if (randomNumber <= 4) animator.SetTrigger("meleeAttack1");
-            else if (randomNumber <= 8) animator.SetTrigger("meleeAttack2");
-            else if (randomNumber <= 10) animator.SetTrigger("rangedAttack1");
+            // Use each attack with 1/4 chance
+            if (randomNumber == 1) animator.SetTrigger("meleeAttack1");
+            else if (randomNumber == 2) animator.SetTrigger("meleeAttack2");
+            else if (randomNumber == 3) animator.SetTrigger("rangedAttack1");
             else animator.SetTrigger("rangedAttack2");
         }
     }
@@ -55,9 +55,9 @@ public class BossWalk : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (randomNumber <= 4) animator.ResetTrigger("meleeAttack1");
-        else if (randomNumber <= 8) animator.ResetTrigger("meleeAttack2");
-        else if (randomNumber <= 10) animator.ResetTrigger("rangedAttack1");
+        if (randomNumber == 1) animator.ResetTrigger("meleeAttack1");
+        else if (randomNumber == 2) animator.ResetTrigger("meleeAttack2");
+        else if (randomNumber == 3) animator.ResetTrigger("rangedAttack1");
         else animator.ResetTrigger("rangedAttack2");
     }
 

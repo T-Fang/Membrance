@@ -40,22 +40,7 @@ public class PlayerAbsorbState : PlayerAbilityState
             Player Absorbed = Player.AbsorbedPlayer.GetComponent<Player>();
             Player.SetAbsorbedId(Player.AbsorbedPlayer.GetComponent<Player>().UniqueId());
             Player.SetMagicInfo(Absorbed.data.MagicId, Absorbed.data.MagicCd, Absorbed.Magic);
-            /*
-            Player.AbsorbedPlayer.SetActive(true);
-            var otherSlashWeaponData = Player.AbsorbedPlayer.transform.Find("Weapons/Sword").GetComponent<DamagingWeapon>().ThisDamageWeaponData();
-            var otherUpSlashWeaponData = Player.AbsorbedPlayer.transform.Find("Weapons/UpSword").GetComponent<DamagingWeapon>().ThisDamageWeaponData();
-            Player.AbsorbedPlayer.SetActive(false);
-            if (otherSlashWeaponData == null)
-            {
-                Debug.Log("Not successful");
-            }
-            */
-            /*
-            Player.transform.Find("Weapons/Sword").GetComponent<DamagingWeapon>().SetDamagingWeaponData(otherSlashWeaponData);
-            
-            Player.transform.Find("Weapons/UpSword").GetComponent<DamagingWeapon>().SetDamagingWeaponData(otherUpSlashWeaponData);
-            */
-            
+            Player.magicdata = Absorbed.magicdata;
             
             Player.transform.Find("Weapons/UpSword/Base").GetComponent<Animator>().runtimeAnimatorController = 
                 Player.AbsorbedPlayer.transform.Find("Weapons/UpSword/Base").GetComponent<Animator>().runtimeAnimatorController;

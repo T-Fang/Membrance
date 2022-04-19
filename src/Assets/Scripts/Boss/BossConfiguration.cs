@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BossConfiguration : MonoBehaviour, HittableObject
 {
@@ -60,7 +63,7 @@ public class BossConfiguration : MonoBehaviour, HittableObject
 
     private void Update()
     {
-        cooldownTimer += Time.unscaledDeltaTime;
+        cooldownTimer += Time.deltaTime;
         // Boss die when it has no more HP
     }
 
@@ -79,6 +82,8 @@ public class BossConfiguration : MonoBehaviour, HittableObject
             isPlayerInRange = false;
         }
     }
+
+    public void TriggerEnding() => SceneManager.LoadScene("Ending");
 
     public void LookAtPlayer()
     {
@@ -131,7 +136,7 @@ public class BossConfiguration : MonoBehaviour, HittableObject
                 spriteRenderer.material.color = Color.red;
                 health = initialHealth / 2;
                 speed *= 2;
-                transform.localScale += new Vector3(5.0f, 5.0f, 0.0f);
+                transform.localScale += new Vector3(10.0f, 10.0f, 0.0f);
                 transform.localPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 effectRenderer.enabled = true;
                 isBoosted = true;
@@ -140,7 +145,6 @@ public class BossConfiguration : MonoBehaviour, HittableObject
             if (health < 0.001f)
             {
                 animator.SetTrigger("defeated");
-                BossDie();
             }
         }
 
@@ -149,6 +153,7 @@ public class BossConfiguration : MonoBehaviour, HittableObject
 
     public void BossDie()
     {  
+       TriggerEnding(); 
         Destroy(gameObject);
     }
 
@@ -163,6 +168,7 @@ public class BossConfiguration : MonoBehaviour, HittableObject
 
     public void MeleeAttack1()
     {
+        isInvulnerable = true;
         damageToPlayer = meleeAttack1;
         playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
         
@@ -171,10 +177,12 @@ public class BossConfiguration : MonoBehaviour, HittableObject
         {
             playerHealth.TakeDamage(damageToPlayer);
         }
+        isInvulnerable = false;
     }
 
     public void MeleeAttack2()
     {
+        isInvulnerable = true;
         damageToPlayer = meleeAttack2;
         playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
 
@@ -183,18 +191,21 @@ public class BossConfiguration : MonoBehaviour, HittableObject
         {
             playerHealth.TakeDamage(damageToPlayer);
         }
+        isInvulnerable = false;
     }
 
     public void RangedAttack1()
     {
         if (cooldownTimer >= attackCooldown)
         {
+            isInvulnerable = true;
             cooldownTimer = 0;
             // Attack
             attackObject1[FindAttackObject1()].transform.position = firepoint1.position;
             attackObject1[FindAttackObject1()].GetComponent<BossAttackProjectile>().ActivateProjectile();
             attackObject2[FindAttackObject2()].transform.position = firepoint2.position;
             attackObject2[FindAttackObject2()].GetComponent<BossAttackProjectile>().ActivateProjectile();
+            isInvulnerable = false;
         }
     }
 
@@ -202,12 +213,14 @@ public class BossConfiguration : MonoBehaviour, HittableObject
     {
         if (cooldownTimer >= attackCooldown)
         {
+            isInvulnerable = true ;
             cooldownTimer = 0;
             // Attack
             this.gameObject.transform.GetChild(2).GetChild(0).transform.position = firepoint3.position;
             this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<BossAttackTrigger>().ActivateTrigger();
             this.gameObject.transform.GetChild(2).GetChild(1).transform.position = firepoint4.position;
             this.gameObject.transform.GetChild(2).GetChild(1).GetComponent<BossAttackTrigger2>().ActivateTrigger();
+            isInvulnerable = false;
         }
     }
 

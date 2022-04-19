@@ -6,7 +6,7 @@ using UnityEngine;
 public class DefaultFireballMovement : MonoBehaviour
 {
     // TODO: Remove static hack and find better solution
-    public float ProjectileSpeed;
+    public MagicStatsData magicdata;
 
     public GameObject impactEffect;
     public GameObject muzzleEffect;
@@ -27,7 +27,7 @@ public class DefaultFireballMovement : MonoBehaviour
     void Start()
     {
         BodyRef = GetComponent<Rigidbody2D>();
-        BodyRef.velocity = transform.right * ProjectileSpeed;
+        BodyRef.velocity = transform.right * magicdata.ProjectileSpeed;
         var muzzleVFX = Instantiate (muzzleEffect, transform.position, Quaternion.identity);
         _startTime = Time.unscaledTime;
         var ps = muzzleVFX.GetComponent<ParticleSystem>();
@@ -74,7 +74,7 @@ public class DefaultFireballMovement : MonoBehaviour
         {
             Instantiate(impactEffect, transform.position, Quaternion.identity);
             //Destroy(col.gameObject);
-            col.GetComponent<HittableObject>().Damage(45);
+            col.GetComponent<HittableObject>().Damage(magicdata.MagicATT);
             // TODO: Generalize to other magic sound
             GameObject.FindObjectOfType<AudioManager>().Play("FireImpact");
             var ps = impactEffect.GetComponent<ParticleSystem>();
@@ -98,7 +98,7 @@ public class DefaultFireballMovement : MonoBehaviour
 			}		
 
 			while (transform.GetChild(0).localScale.x > 0) {
-				yield return new WaitForSeconds (0.01f);
+				yield return new WaitForSecondsRealtime(0.01f);
 				transform.GetChild(0).localScale -= new Vector3 (0.1f, 0.1f, 0.1f);
 				for (int i = 0; i < tList.Count; i++) {
 					tList[i].localScale -= new Vector3 (0.1f, 0.1f, 0.1f);
@@ -106,7 +106,7 @@ public class DefaultFireballMovement : MonoBehaviour
 			}
 		}
 		
-		yield return new WaitForSeconds (waitTime);
+		yield return new WaitForSecondsRealtime(waitTime);
 		Destroy (gameObject);
 	}
 }

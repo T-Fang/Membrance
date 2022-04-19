@@ -2030,7 +2030,7 @@ MonoBehaviour:
   volumeSlider: {fileID: 1625733935}
   confirmationPrompt: {fileID: 1289947748}
   defaultVolume: 50
-  newGameLevel: Level1LTSLighting
+  newGameLevel: Level1LTS
 --- !u!4 &1035180439
 Transform:
   m_ObjectHideFlags: 0

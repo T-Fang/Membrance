@@ -19,6 +19,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool SlowMoBtnLifted { get; private set; }
     public bool[] AttackInputted { get; private set; }
     public bool SuccBtnInputted { get; private set; }
+    public bool ChangeBackInputted { get; private set; }
 
     public int CurrentAbility { get; private set; }
 
@@ -173,6 +174,19 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnChangeBackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            ChangeBackInputted = true;
+        }
+
+        if (context.canceled)
+        {
+            ChangeBackInputted = false;
+        }
+    }
+
 
 
     // These are important to let Unity know we are not inputting forever
@@ -180,6 +194,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void ConsumeDashButton() => DashInputted = false;
     public void ConsumeSlowMoButton() => SlowMoBtnInputted = false;
     public void ConsumeSuccButton() => SuccBtnInputted = false;
+    public void ConsumeChangeBackButton() => ChangeBackInputted = false;
 
     public void HackyConsumption()
     {

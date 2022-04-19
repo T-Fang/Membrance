@@ -18,4 +18,10 @@ public class TransitionSmokeController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void FinishChangeBack()
+    {
+        Player.SetFinishChangeBack();
+        Destroy(gameObject);
+    }
+
 }

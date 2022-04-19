@@ -70,6 +70,7 @@ public class PlayerData : ScriptableObject
         dragForce = 10.0f; // Some air resist 
         dashVel = originalDashVel;
         jumpVel = originalJumpVel;
+        
     }
 
 

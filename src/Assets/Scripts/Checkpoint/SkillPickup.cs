@@ -15,7 +15,7 @@ public class SkillPickup : MonoBehaviour
     string[] skillMessages = {
         "Looks like the orb gave you a new ability along with your memories as well. To Dash, press Z while moving. \n\n" +
             "The orbs appears to suck you in as you find yourself travelling through a portal.",
-        "The most recent memory was your greatest yet, so now your newest power is too.  Press T to slow down time for everything except for you \n\n" +
+        "Nice! \n\n" +
             "This feels familiar. As power wells within you, you are transported to yet another battlefield.",
         "As you collect the final orb, the fog in your mind finally clears and you think to yourself, \"I'm free... finally\"",
         "You can't acutally beat the boss cuz it's bugged, congrats for finishing!"
@@ -32,7 +32,7 @@ public class SkillPickup : MonoBehaviour
 
     void Update()
     {
-        if(dialogue.activeSelf && (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.KeypadEnter))) closeDialogue();
+        if(dialogue.activeSelf && (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Return))) closeDialogue();
     }
 
     void OnTriggerEnter2D(Collider2D other)
