@@ -1,6 +1,14 @@
 # Membrance
 A 2D Action Platformer Game
 
+**Story:**
+
+- The Demon King has stolen your memories!
+- Fight his army to take them back!
+- But as you retrieve them….
+- The levels look corrupted/overlaid with different things not from this world/ our reality
+- Defeating the Demon King should solve everything, right?
+
 **Team members:**
 
 ALEX TEO KANG JIEl, CUNG CHAN THANG, EDELINE TENGES, JASON TAY, TIAN FANG, ZHU BO
@@ -10,7 +18,7 @@ ALEX TEO KANG JIEl, CUNG CHAN THANG, EDELINE TENGES, JASON TAY, TIAN FANG, ZHU B
 
 **Game Trailer:**
 
-[![CS3247 miniProject5 Demo](https://img.youtube.com/vi/B1FhbOkWKRU/0.jpg)](https://www.youtube.com/watch?v=B1FhbOkWKRU )
+[![CS3247 miniProject5 Demo](https://img.youtube.com/vi/7tTBn16KZH8/0.jpg)](https://www.youtube.com/watch?v=7tTBn16KZH8)
 
 ### To Compile and Run the game
 
